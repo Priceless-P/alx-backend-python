@@ -16,4 +16,4 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
             task = tg.create_task(wait_random(max_delay))
             tasks.append(task)
 
-    return [task.result() for task in tasks]
+    return sorted([task.result() for task in tasks])
